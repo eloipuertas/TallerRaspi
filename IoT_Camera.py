@@ -216,10 +216,10 @@ camera = PiCamera()
 
 timestamp = datetime.now().isoformat()
 photo_path = '/home/pi/tweeting-babbage/photos/{}.jpg'.format(timestamp)
-    sleep(3)
-    camera.capture(photo_path)
+sleep(3)
+camera.capture(photo_path)
 
-    with open(photo_path, 'rb') as photo:
+with open(photo_path, 'rb') as photo:
         twitter.update_status_with_media(status=message, media=photo)
 
 
